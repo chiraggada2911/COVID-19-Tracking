@@ -1,6 +1,7 @@
 package co.chiraggada.trackcovid19;
 
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
 
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -46,6 +48,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.github.mikephil.charting.utils.ColorTemplate.rgb;
+import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         com.github.mikephil.charting.charts.PieChart mPieChart =  findViewById(R.id.piechart);
         txt_confirmed = findViewById(R.id.txt_confirmed);
@@ -86,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         includedIdpinned = findViewById(R.id.includedIdPinned);
         info = findViewById(R.id.info);
         txt_infog = findViewById(R.id.infog);
+
+
 
         new CheckInternetConnection(this).checkConnection();
         handleFAB();
@@ -149,6 +157,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 
     private void handleFAB() {
 
