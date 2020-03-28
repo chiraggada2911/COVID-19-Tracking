@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Track CoVID19</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="zero">0</string>
+    <string name="case_reported">case reported</string>
+    <string name="confirmed">confirmed</string>
+    <string name="recovered">recovered</string>
+    <string name="deaths">deaths</string>
+    <string name="tap_on_statistic">Data source : https://covid19.mathdro.id/api/</string>
+    <string name="noconnection">No Connection</string>
+    <string name="type_city_province_region">Type a City or Country</string>
+    <string name="skip">skip</string>
+
+    <string name="slide_1_title">Exclusive Products</string>
+    <string name="slide_1_desc">Get products which are unique and only available at our shops !</string>
+
+    <string name="slide_2_title">Cheap Rates</string>
+    <string name="slide_2_desc">Products at such an affordable rates !</string>
+
+    <string name="slide_3_title">Hassle Free Payments</string>
+    <string name="slide_3_desc">With various pay options , you can easily pay in a minute !</string>
+
+    <string name="slide_4_title">Fast Delivery</string>
+    <string name="slide_4_desc">Blazing fast order delivery within time !</string>
+    <string name="start">start</string>
+
+</resources>

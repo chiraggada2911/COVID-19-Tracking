@@ -1,0 +1,95 @@
+  <html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    var newData = [['Country', 'Popularity']];
+      // call java function from javascript
+    AndroidNativeCode.getValueJson();
+      // this function is used to send data from java class to html page using javascript
+        function setJson(Jsonobject)
+       {
+
+            for (var n =0; n < Jsonobject.length; n++)
+             {
+                // put the data in DataTable
+               newData.push([Jsonobject[n].Country , parseInt(Jsonobject[n].Popularity) , '<div class="map-shape-one" onclick="call    (\''+Jsonobject[n].Country+'\')"><p>'+Jsonobject[n].Country+'</p><p>'+Jsonobject[n].Popularity+'</p><p>--------</p><p>'+Jsonobject[n].Temperature+'</p></div>']);
+             }
+
+       }
+
+       function call(abc) {
+
+        document.getElementById('msg_call').innerHTML = 'You clicked '+abc;
+       }
+      function drawRegionsMap() {
+
+      var data;
+        data = new google.visualization.DataTable();
+
+          // determine the number of rows and columns.
+          var numRows = newData.length;
+          var numCols = newData[0].length;
+
+          // in this case the first column is of type 'string'.
+          data.addColumn('string', newData[0][0]);
+
+          // all other columns are of type 'number'.
+          for (var i = 1; i < numCols; i++)
+            data.addColumn('number', newData[0][i]);
+
+            data.addColumn({
+                      type: 'string',
+                      role: 'tooltip',
+                      'p': {'html': true}
+             });
+
+          // now add the rows.
+          for (var i = 1; i < numRows; i++)
+            data.addRow(newData[i]);
+
+        var options = {
+          colorAxis: {colors: ['#FCA33B','#F18C34','#E4761F','#D15F19']},
+          legend: 'none',
+         tooltip: {isHtml: true}
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+       chart.draw(data, options);
+    }
+    google.charts.load('visualization', '1', {packages: ['geochart'], callback: drawRegionsMap});
+
+    </script>
+
+    <style>
+        .map-shape-one {
+        background-color: #e87603;
+        border-radius: 50px 50px 50px 0px;
+        display: inline-block;
+        height: auto;
+        margin: auto;
+        max-width: 100%;
+        min-height: 40px;
+        min-width: 70px;
+        padding: 8px 15px 8px 20px;
+        width: auto;
+        }
+        .map-shape-one p {
+        margin: 0px;
+        text-align: center;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        }
+        .map-shape-one p:first-child {
+        font-weight: bold;
+        text-transform: uppercase;
+        }
+
+    </style>
+</head>
+<body >
+<div id="regions_div" style="width: auto; height: auto;"></div>
+<div id="msg_call" ></div>
+</body>
+</html>

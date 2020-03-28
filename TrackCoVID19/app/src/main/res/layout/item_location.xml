@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/davy_grey"
+    android:foreground="?selectableItemBackground"
+    android:padding="@dimen/space_x2"
+    android:clickable="true"
+    android:focusable="true"
+    app:layout_goneMarginBottom="@dimen/space_half">
+
+
+    <ImageView
+        android:id="@+id/img_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pin" />
+
+    <TextView
+        android:id="@+id/Alltxt_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_x3"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintStart_toEndOf="@id/img_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Country Name" />
+
+    <TextView
+        android:id="@+id/Alltxt_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:textAppearance="@style/TextAppearance.App.TextView.H5.White.Bold"
+        android:textColor="@color/color_confirmed"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintStart_toStartOf="@id/Alltxt_location"
+        app:layout_constraintTop_toBottomOf="@id/Alltxt_location"
+        tools:text="Confirmed : 220 "
+        tools:visibility="visible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/Alltxt_rcv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:textAppearance="@style/TextAppearance.App.TextView.H5.White.Bold"
+        android:textColor="@color/color_recovered"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintStart_toEndOf="@id/img_icon"
+        app:layout_constraintTop_toBottomOf="@id/Alltxt_data"
+        tools:text="Recovered : 220 "
+        tools:visibility="visible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/Alltxt_death"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:textAppearance="@style/TextAppearance.App.TextView.H5.White.Bold"
+        android:textColor="@color/color_death"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintStart_toEndOf="@id/Alltxt_rcv"
+        app:layout_constraintTop_toBottomOf="@id/Alltxt_data"
+        tools:text="Death : 220 "
+        tools:visibility="visible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_AlllastUpdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/cool_grey"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_icon"
+        app:layout_constraintTop_toBottomOf="@id/Alltxt_death"
+        tools:text="Last Updated on : 29/11/2019" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
