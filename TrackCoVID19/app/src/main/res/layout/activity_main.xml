@@ -11,6 +11,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="?actionBarSize">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -24,21 +25,21 @@
         <ImageView
             android:id="@+id/info"
             android:layout_margin="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/info"
             />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <include layout="@layout/content_main"
+    <include
         android:id="@+id/contentmain"
-        android:layout_below="@id/toolbar"
-        android:layout_width="wrap_content"
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true" />
 
     <include
         layout="@layout/item_pinned"
