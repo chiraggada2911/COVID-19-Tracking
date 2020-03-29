@@ -29,5 +29,20 @@
     <string name="slide_4_title">Fast Delivery</string>
     <string name="slide_4_desc">Blazing fast order delivery within time !</string>
     <string name="start">start</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="aboutLabelSubtitle">This is an application to track Novel Corona Virus spread</string>
+    <string name="aboutLabelVersion">2.1.0</string>
+    <string name="aboutLabelDeveloper">Developers</string>
+    <string name="aboutTextDeveloper">Chirag Gada | Manan Shah</string>
+    <string name="aboutLabelLicense">License</string>
+    <string name="aboutTextLicense">MIT License  Copyright (c) 2020 Chirag Gada</string>
+    <string name="aboutLabelDatabase">Database</string>
+    <string name="abouTextDatabase">Indian Ministry of Health</string>
+    <string name="aboutTextDatabaseTwo">https://api.covid19india.org/</string>
+    <string name="find_me_on_github_github_com_whoishusni">Find us on Github</string>
+    <string name="github">Github</string>
+    <string name="made_with">made with</string>
+    <string name="for_human">for human</string>
 
 </resources>

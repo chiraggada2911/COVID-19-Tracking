@@ -1,215 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshWorld"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
+    tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="?actionBarSize">
-        <RelativeLayout
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:adjustViewBounds="true"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/ic_launcher_foreground" />
-          <TextView
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:id="@+id/NameApp"
-              android:text="CoVID 19"
-              android:textColor="@color/white"
-              android:textSize="20sp"
-              android:layout_centerInParent="true"
-              android:textAlignment="center"
-              android:paddingTop="12dp"></TextView>
-        <ImageView
-            android:id="@+id/info"
-            android:layout_margin="10dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/info"
-            />
-        </RelativeLayout>
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="10dp">
 
-    <include
-        android:id="@+id/contentmain"
-        layout="@layout/content_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_marginTop="-23dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <include
-        layout="@layout/item_pinned"
-        android:id="@+id/includedIdPinned"
-        android:layout_below="@id/contentmain"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_alignParentLeft="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_launcher_foreground" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:gravity="end|right"
-        android:orientation="vertical">
+                <TextView
+                    android:id="@+id/NameApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="12dp"
+                    android:text="CoVID 19"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/info"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/info" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <include
+            android:id="@+id/contentmain"
+            layout="@layout/content_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="-23dp" />
+
+        <include
+            android:id="@+id/includedIdPinned"
+            layout="@layout/item_pinned"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contentmain"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/lyt_confirmedFAB">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end|right"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="3dp"
-                android:elevation="2dp"
-                app:contentPadding="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Confirmed"
-                    />
-            </androidx.cardview.widget.CardView>
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_confirmed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:tint="#37474F"
-                android:backgroundTint="@color/color_confirmed"
-                app:fabSize="mini"
-                app:rippleColor="@android:color/black"
-                app:srcCompat="@drawable/world"/>
-
-            <View
-                android:layout_width="7dp"
-                android:layout_height="0dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/lyt_recoveredFAB">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end|right"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="3dp"
-                android:elevation="2dp"
-                app:contentPadding="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Recovered"
-                    />
-            </androidx.cardview.widget.CardView>
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_recovered"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:tint="#37474F"
-                android:backgroundTint="@color/color_recovered"
-                app:fabSize="mini"
-                app:rippleColor="@android:color/black"
-                app:srcCompat="@drawable/world"/>
-
-            <View
-                android:layout_width="7dp"
-                android:layout_height="0dp" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/lyt_deathFAB">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end|right"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="3dp"
-                android:elevation="2dp"
-                app:contentPadding="5dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Death"
-                    />
-            </androidx.cardview.widget.CardView>
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_death"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:tint="#37474F"
-                android:backgroundTint="@color/color_death"
-                app:fabSize="mini"
-                app:rippleColor="@android:color/black"
-                app:srcCompat="@drawable/world"/>
-
-            <View
-                android:layout_width="7dp"
-                android:layout_height="0dp" />
-
-        </LinearLayout>
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/fab_margin"
-            android:backgroundTint="@color/colorAccent"
-            app:fabSize="normal"
-            app:srcCompat="@drawable/ic_public_black_24dp" />
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="end|right"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lyt_confirmedFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end|right"
+                    android:layout_margin="10dp"
+                    android:elevation="2dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="3dp"
+                    app:contentPadding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Confirmed" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_confirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/color_confirmed"
+                    android:clickable="true"
+                    android:tint="#37474F"
+                    app:fabSize="mini"
+                    app:rippleColor="@android:color/black"
+                    app:srcCompat="@drawable/world" />
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_recoveredFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end|right"
+                    android:layout_margin="10dp"
+                    android:elevation="2dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="3dp"
+                    app:contentPadding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Recovered" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_recovered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/color_recovered"
+                    android:clickable="true"
+                    android:tint="#37474F"
+                    app:fabSize="mini"
+                    app:rippleColor="@android:color/black"
+                    app:srcCompat="@drawable/world" />
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_deathFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end|right"
+                    android:layout_margin="10dp"
+                    android:elevation="2dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="3dp"
+                    app:contentPadding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Death" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_death"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/color_death"
+                    android:clickable="true"
+                    android:tint="#37474F"
+                    app:fabSize="mini"
+                    app:rippleColor="@android:color/black"
+                    app:srcCompat="@drawable/world" />
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/fab_margin"
+                android:backgroundTint="@color/colorAccent"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_public_black_24dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-
-
-</RelativeLayout>

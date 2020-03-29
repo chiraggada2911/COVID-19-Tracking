@@ -62,21 +62,21 @@ public class TimelineActivity extends AppCompatActivity {
         call.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                JsonArray j = response.body().getAsJsonArray("India");
+                JsonArray j = response.body().getAsJsonArray("cases_time_series");
                 for(int i = 0; i< j.size();i++){
                     JsonObject pp = j.get(i).getAsJsonObject();
-                    String td = pp.get("date").getAsString();
-                    int TimelineConfirmed = pp.get("confirmed").getAsInt();
-                    int TimelineDeaths = pp.get("deaths").getAsInt();
-                    int TimelineRecovered = pp.get("recovered").getAsInt();
-                    SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM yyyy");
-                    Date date1= null;
-                    try {
-                        date1 = new SimpleDateFormat("yyyy-MM-dd").parse(td);
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
-                    String TimelineDate = formatter.format(date1);
+                    String date = pp.get("date").getAsString();
+                    int TimelineConfirmed = pp.get("totalconfirmed").getAsInt();
+                    int TimelineDeaths = pp.get("totaldeceased").getAsInt();
+                    int TimelineRecovered = pp.get("totalrecovered").getAsInt();
+//                    SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM yyyy");
+//                    Date date1= null;
+//                    try {
+//                        date1 = new SimpleDateFormat("yyyy-MM-dd").parse(td);
+//                    } catch (ParseException e) {
+//                        e.printStackTrace();
+//                    }
+                    String TimelineDate = date;
                     CovidTimeLine ccc = new CovidTimeLine(TimelineDate,TimelineConfirmed,TimelineDeaths,TimelineRecovered) ;
                     CountryList.add(ccc);
                 }

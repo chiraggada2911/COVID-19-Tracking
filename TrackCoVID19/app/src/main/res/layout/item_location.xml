@@ -89,23 +89,7 @@
 
     </TextView>
 
-    <TextView
-        android:id="@+id/txt_AlllastUpdate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="12dp"
-        android:textColor="@color/cool_grey"
-        android:textSize="@dimen/text_14"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/img_icon"
-        app:layout_constraintTop_toBottomOf="@id/Alltxt_death"
-        tools:text="Last Updated on : 29/11/2019" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,7 +51,7 @@ public class AllCountriesAdapter extends RecyclerView.Adapter<AllCountriesAdapte
        holder.Alltxt_data.setText("Confirmed "+String.valueOf(covidCountry.getConfirmed()));
        holder.Alltxt_death.setText("Death "+String.valueOf(covidCountry.getDeaths()));
        holder.Alltxt_recovered.setText("Recovered "+String.valueOf(covidCountry.getRecovered()));
-       holder.Alllast_update.setText("Last Updated on" +String.valueOf(covidCountry.getLastUpdate()));
+
     }
 
     @Override
@@ -72,7 +72,7 @@ public class AllCountriesAdapter extends RecyclerView.Adapter<AllCountriesAdapte
             Alltxt_data = itemView.findViewById(R.id.Alltxt_data);
             Alltxt_death = itemView.findViewById(R.id.Alltxt_death);
             Alltxt_recovered = itemView.findViewById(R.id.Alltxt_rcv);
-            Alllast_update = itemView.findViewById(R.id.txt_AlllastUpdate);
+
             parentLayout = itemView.findViewById(R.id.root);
 
             this.onCountryListener = onCountryListener;

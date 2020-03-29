@@ -26,7 +26,7 @@ public interface ApiInterface {
     @GET("api/countries/{country}")
     Call<JsonObject> getCountry(@Path("country") String Country);
 
-    @GET("covid19/timeseries.json")
+    @GET("data.json")
     Call<JsonObject> getTimeLine();
 
 

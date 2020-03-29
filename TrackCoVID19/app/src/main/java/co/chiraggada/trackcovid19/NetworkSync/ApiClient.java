@@ -10,7 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     public static final String BASE_URL = "https://covid19.mathdro.id/";
-    public static final String BASE_URL2 = "https://pomber.github.io/";
+    public static final String BASE_URL2 = " https://api.covid19india.org/";
+//
     private static Retrofit retrofit,retrofit2 = null;
 
     public static Retrofit getClient(){
