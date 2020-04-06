@@ -18,13 +18,13 @@ The theme of the app is DarkMode.<br>
 ## Screenshots
 
 [<img src="/screenshot/1.jpg" align="left"
-width="300"
+width="250"
     hspace="10" vspace="10">](/screenshot/1.jpg)
 [<img src="/screenshot/2.jpg" align="center"
-width="300"
+width="250"
     hspace="10" vspace="10">](/screenshot/2.jpg)
     [<img src="/screenshot/3.jpg" align="center"
-width="300"
+width="250"
     hspace="10" vspace="10">](/screenshot/3.jpg)
 
 ## Libraries used
