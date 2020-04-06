@@ -1,6 +1,6 @@
-# Covid19 Tracking - Android App [![Build Status](https://travis-ci.org/wallabag/android-app.svg?branch=master)](https://travis-ci.org/wallabag/android-app)
+# Covid19 Tracking - Android App 
 
-<img src="/readme/wallabag logo.png" align="left"
+<img src="/screenshot/logo.png" align="left"
 width="200" hspace="10" vspace="10">
 
 COVID-19 Tracking is an android app to track the records globally.
