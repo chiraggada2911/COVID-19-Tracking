@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class AboutActivity extends AppCompatActivity {
 
-    Button gitHubBtn1,gitHubBtn2;
+    Button gitHubBtn1,gitHubBtn2,checkForUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,17 @@ public class AboutActivity extends AppCompatActivity {
 
         gitHubBtn1 = findViewById(R.id.githubBtn);
         gitHubBtn2 = findViewById(R.id.githubBtn2);
+        checkForUpdate = findViewById(R.id.updateCheck);
+
+        checkForUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://www.github.com/chiraggada2911";
+                Uri parseUrl = Uri.parse(url);
+                Intent intent = new Intent(Intent.ACTION_VIEW, parseUrl);
+                startActivity(intent);
+            }
+        });
 
         gitHubBtn1.setOnClickListener(new View.OnClickListener() {
             @Override

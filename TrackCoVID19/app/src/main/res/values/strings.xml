@@ -9,7 +9,7 @@
 
     <string name="zero">0</string>
     <string name="case_reported">case reported</string>
-    <string name="confirmed">confirmed</string>
+    <string name="confirmed">active</string>
     <string name="recovered">recovered</string>
     <string name="deaths">deaths</string>
     <string name="tap_on_statistic">Data source : https://covid19.mathdro.id/api/</string>
@@ -32,7 +32,7 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="aboutLabelSubtitle">This is an application to track Novel Corona Virus spread</string>
-    <string name="aboutLabelVersion">2.1.0</string>
+    <string name="aboutLabelVersion">2.2.0</string>
     <string name="aboutLabelDeveloper">Developers</string>
     <string name="aboutTextDeveloper">Chirag Gada | Manan Shah</string>
     <string name="aboutLabelLicense">License</string>

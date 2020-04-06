@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:text="@string/confirmed"
+        android:text="confirmed"
         android:textAppearance="@style/TextAppearance.App.TextView.H5.White.Bold"
         android:textColor="@color/color_confirmed"
         android:textSize="12sp"

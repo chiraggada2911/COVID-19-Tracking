@@ -4,20 +4,24 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.chiraggada.trackcovid19.Modal.CovidCountry;
 import co.chiraggada.trackcovid19.R;
 
-public class AllCountriesAdapter extends RecyclerView.Adapter<AllCountriesAdapter.countriesViewHolder>{
+public class AllCountriesAdapter extends RecyclerView.Adapter<AllCountriesAdapter.countriesViewHolder> implements Filterable {
 
    private List<CovidCountry> countries;
+    private List<CovidCountry> countriesFiltered;
    private Context context;
    private LayoutInflater inflater;
    private OnCountryListener onCountryListener;
@@ -59,6 +63,41 @@ public class AllCountriesAdapter extends RecyclerView.Adapter<AllCountriesAdapte
         return countries.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                if (charString.isEmpty()) {
+                    countriesFiltered = countries;
+                } else {
+                    List<CovidCountry> filteredList = new ArrayList<>();
+                    for (CovidCountry row : countries) {
+
+                        // name match condition. this might differ depending on your requirement
+                        // here we are looking for name or phone number match
+                        if (row.getCountryRegion().toLowerCase().contains(charString.toLowerCase()) || row.getProvinceState().contains(charSequence)) {
+                            filteredList.add(row);
+                        }
+                    }
+
+                    countriesFiltered = filteredList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = countriesFiltered;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                countriesFiltered = (ArrayList<CovidCountry>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }
+
     public class countriesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView txt_location,Alltxt_data,Alltxt_death,Alltxt_recovered,Alllast_update;
@@ -89,5 +128,6 @@ public class AllCountriesAdapter extends RecyclerView.Adapter<AllCountriesAdapte
     public interface OnCountryListener{
         void countryListener(int position);
     }
+
 
 }

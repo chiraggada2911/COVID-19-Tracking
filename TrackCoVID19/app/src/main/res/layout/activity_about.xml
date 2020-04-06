@@ -135,5 +135,14 @@
         android:textColor="@android:color/white"
         android:layout_marginBottom="30dp"/>
 </LinearLayout>
+        <Button
+            android:id="@+id/updateCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D81B60"
+            android:layout_weight="0.5"
+            android:text="Check for Update"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="30dp"/>
     </LinearLayout>
 </ScrollView>

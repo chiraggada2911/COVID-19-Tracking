@@ -20,7 +20,7 @@ public interface ApiInterface {
 
 //    @GET("api/daily")
 
-    @GET("api/confirmed")
+    @GET("api/recovered")
     Call<List<CovidCountry>> getForMap();
 
     @GET("api/countries/{country}")

@@ -37,6 +37,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.sql.Time;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -249,7 +250,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 JsonElement jdeath = response.body().getAsJsonObject("deaths");
                 JsonObject jsonObjectd = jdeath.getAsJsonObject();
                 refreshData(false);
-                editor.putInt("confirmed", Integer.parseInt(String.valueOf(jsonObjectc.get("value"))));
+                int actualConfirmed = Integer.parseInt(String.valueOf(jsonObjectc.get("value"))) - Integer.parseInt(String.valueOf(jsonObjectr.get("value"))) - Integer.parseInt(String.valueOf(jsonObjectd.get("value")));
+                editor.putInt("confirmed", actualConfirmed);
                 editor.putInt("recovered", Integer.parseInt(String.valueOf(jsonObjectr.get("value"))));
                 editor.putInt("death", Integer.parseInt(String.valueOf(jsonObjectd.get("value"))));
                 editor.commit();
@@ -290,7 +292,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM yyyy");
                 Date date1 = null;
                 try {
-                    date1 = new SimpleDateFormat("dd/mm/yyyy").parse(lastupdatedtime);
+                    date1 = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").parse(lastupdatedtime);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -313,7 +315,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     private SpannableString generateCenterSpannableText() {
 
-        SpannableString s = new SpannableString(String.valueOf(df.format(confirmed + recovered + death)) + "\n Cases reported");
+        SpannableString s = new SpannableString(String.valueOf(df.format(confirmed+recovered+death)) + "\n Cases reported");
         s.setSpan(new RelativeSizeSpan(1.7f), 0, s.length() - 14, 0);
         s.setSpan(new StyleSpan(Typeface.NORMAL), 8, s.length(), 0);
         s.setSpan(new StyleSpan(Typeface.BOLD), 0, s.length() - 14, 0);

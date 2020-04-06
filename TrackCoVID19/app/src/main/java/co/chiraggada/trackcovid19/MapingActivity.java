@@ -1,11 +1,15 @@
 package co.chiraggada.trackcovid19;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,19 +32,20 @@ import retrofit2.Response;
 
 public class MapingActivity extends AppCompatActivity implements AllCountriesAdapter.OnCountryListener  {
 
-    EditText txt_search;
+   androidx.appcompat.widget.SearchView txt_search;
     RecyclerView recyclerView;
     AllCountriesAdapter allCountriesAdapter;
     ApiInterface apiInterface;
     SwipeRefreshLayout swipeRefreshLayout;
     FloatingActionButton fab_back;
+    ArrayAdapter<String> filterArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-//        txt_search = findViewById(R.id.txt_search);
+        txt_search = findViewById(R.id.txt_search);
         recyclerView = findViewById(R.id.recycler_view);
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
@@ -71,6 +76,37 @@ public class MapingActivity extends AppCompatActivity implements AllCountriesAda
             }
         });
 
+        txt_search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                allCountriesAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                allCountriesAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+//        txt_search.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                allCountriesAdapter.getFilter().filter(charSequence);
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
+
     }
 
     private void initComponent(){
@@ -94,6 +130,9 @@ public class MapingActivity extends AppCompatActivity implements AllCountriesAda
                 populateList(allCountries);
                 swipeRefreshLayout.setRefreshing(false);
                 progressDialog.dismiss();
+//                for(int i = 1;i<allCountries.size();i++){
+//                    filterArray.add(allCountries.get(i).getCountryRegion());
+//                }
             }
 
             @Override

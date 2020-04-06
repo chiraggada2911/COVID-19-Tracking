@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "501411965788",
+    "firebase_url": "https://track-covid19-6d796.firebaseio.com",
+    "project_id": "track-covid19-6d796",
+    "storage_bucket": "track-covid19-6d796.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501411965788:android:bc9123752eb3e53fc0af99",
+        "android_client_info": {
+          "package_name": "co.chiraggada.trackcovid19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501411965788-khrinnomfat8e63o0vnvg36t4o781c53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUWvC2wIkebghGcV3Hs1taPS4QMy5iJEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501411965788-khrinnomfat8e63o0vnvg36t4o781c53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

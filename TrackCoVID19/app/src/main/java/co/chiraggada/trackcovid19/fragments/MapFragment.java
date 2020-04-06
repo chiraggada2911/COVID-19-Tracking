@@ -1,6 +1,5 @@
 package co.chiraggada.trackcovid19.fragments;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,7 +24,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 
-import co.chiraggada.trackcovid19.MapingActivity;
 import co.chiraggada.trackcovid19.Modal.CovidCountry;
 import co.chiraggada.trackcovid19.NetworkSync.ApiClient;
 import co.chiraggada.trackcovid19.NetworkSync.ApiInterface;
@@ -111,7 +108,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             @Override
             public void onResponse(Call<List<CovidCountry>> call, Response<List<CovidCountry>> response) {
                 List<CovidCountry> allCountries = response.body();
-                for(int i = 0;i< allCountries.size();i++){
+                for(int i = 0;i<allCountries.size();i++){
+
                     createMarker(allCountries.get(i).getLat(),
                             allCountries.get(i).getLongi(),
                             allCountries.get(i).getProvinceState(),
@@ -119,6 +117,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                             allCountries.get(i).getDeaths(),
                             allCountries.get(i).getRecovered(),
                             allCountries.get(i).getCountryRegion());
+
                 }
 
             }
@@ -157,6 +156,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }else{
             title = provinceState + " , " + Country;
         }
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(lat,longi))
                 .title(title)
