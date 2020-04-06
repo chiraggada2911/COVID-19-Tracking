@@ -6,12 +6,6 @@ width="200" hspace="10" vspace="10">
 COVID-19 Tracking is an android app to track the records globally.
 It shows data in Pie-chart form as well as as numbers.
 
-<a href="https://f-droid.org/app/fr.gaulupeau.apps.InThePoche">
-    <img alt="Get it on F-Droid"
-        height="80"
-        src="https://f-droid.org/badge/get-it-on.png" />
-        </a>
-        </p>
 
 ## Features
 
@@ -24,13 +18,13 @@ The theme of the app is DarkMode.<br>
 ## Screenshots
 
 [<img src="/screenshot/1.jpg" align="left"
-width="200"
+width="250"
     hspace="10" vspace="10">](/screenshot/1.jpg)
 [<img src="/screenshot/2.jpg" align="center"
-width="200"
+width="250"
     hspace="10" vspace="10">](/screenshot/2.jpg)
     [<img src="/screenshot/3.jpg" align="center"
-width="200"
+width="250"
     hspace="10" vspace="10">](/screenshot/3.jpg)
 
 ## Libraries used
